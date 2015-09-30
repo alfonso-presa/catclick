@@ -1,6 +1,13 @@
-<div ng-repeat="cat in cats" class="cat">
+
+<ul>
+	<li ng-repeat="cat in cats">
+		<a href="javascript:void();" ng-click="select(cat)">{{cat.name}}</a>
+	</li>
+</ul>
+
+<div class="cat">
 	<h2>{{cat.name}}</h2>
-	<img ng-src="{{cat.img}}" ng-click="inc(cat)"/>
-<p>This is the amount of clicks on this cat: {{cat.counter}}
-</p>
+	<img ng-src="{{cat.img}}" ng-click="inc()" />
+	<p>This is the amount of clicks on this cat: {{cat.counter}}
+	</p>
 </div>

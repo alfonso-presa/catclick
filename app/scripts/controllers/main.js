@@ -13,7 +13,11 @@ angular.module('styleSageApp')
       {name:"Frodo", img: "/images/gato.jpg", counter: 0},
       {name:"Bilbo", img: "/images/gato2.jpg", counter: 0}
     ];
-    $scope.inc = function (cat) {
-      cat.counter++;
+    $scope.cat = $scope.cats[0];
+    $scope.inc = function () {
+      $scope.cat.counter++;
+    };
+    $scope.select = function (cat) {
+      $scope.cat = cat;
     };
   });

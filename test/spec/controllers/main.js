@@ -16,9 +16,16 @@ describe('Controller: MainCtrl', function () {
     });
   }));
 
-  it('should increment the cat`s counter when inc is called', function () {
+  it('should select a  cat', function () {
+    expect(scope.cat).toBe(scope.cats[0]);
+    scope.select(scope.cats[1]);
+    expect(scope.cat).toBe(scope.cats[1]);
+  });
+
+
+  it('should increment the selected cat`s counter when inc is called', function () {
     expect(scope.cats[0].counter).toBe(0);
-    scope.inc(scope.cats[0]);
+    scope.inc();
     expect(scope.cats[0].counter).toBe(1);
   });
 });
