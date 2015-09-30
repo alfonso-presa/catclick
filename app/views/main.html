@@ -1,13 +1,47 @@
+<div ng-if="!admin">
+	<ul>
+		<li ng-repeat="cat in cats">
+			<a href="javascript:void();" ng-click="select(cat)">{{cat.name}}</a>
+		</li>
+	</ul>
 
-<ul>
-	<li ng-repeat="cat in cats">
-		<a href="javascript:void();" ng-click="select(cat)">{{cat.name}}</a>
-	</li>
-</ul>
+	<div class="cat">
+		<h2>{{cat.name}}</h2>
+		<img ng-src="{{cat.img}}" ng-click="inc()" />
+		<p>This is the amount of clicks on this cat: {{cat.counter}}
+		</p>
+		<button ng-click="openAdmin()" ng-if="!admin">Admin</button>
+	</div>
+</div>
 
-<div class="cat">
-	<h2>{{cat.name}}</h2>
-	<img ng-src="{{cat.img}}" ng-click="inc()" />
-	<p>This is the amount of clicks on this cat: {{cat.counter}}
-	</p>
+<div ng-if="admin">
+
+	<div class="adminForm">
+		<form name="catEditor">
+			<div class="input-section">
+				<label for="name">Cat's name</label>
+				<input name="name" type="text" ng-model="editCat.name" />
+			</div>
+			<div class="input-section">
+				<label for="name">Cat's picture</label>
+				<input name="name" type="text" ng-model="editCat.img" />
+			</div>
+			<div class="input-section">
+				<label for="name">Cat's counter</label>
+				<input name="name" type="number" ng-model="editCat.counter" />
+			</div>
+			<div class="input-section">
+				<button ng-click="save()">Save</button>
+				<button ng-click="cancel()">Cancel</button>
+			</div>
+		</form>
+	</div>
+	<div class="cat">
+		<h3>Preview</h3>
+		<h2>{{editCat.name}}</h2>
+		<img ng-src="{{editCat.img}}" ng-click="inc()" />
+		<p>This is the amount of clicks on this cat: {{editCat.counter}}
+		</p>
+		<button ng-click="openAdmin()" ng-if="!admin">Admin</button>
+	</div>
 </div>
