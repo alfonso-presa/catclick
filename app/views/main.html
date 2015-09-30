@@ -1,4 +1,6 @@
-<img src="/images/gato.jpg" ng-click="inc()"/>
-
-<p>This is the ammount of clicks: {{counter}}
+<div ng-repeat="cat in cats" class="cat">
+	<h2>{{cat.name}}</h2>
+	<img ng-src="{{cat.img}}" ng-click="inc(cat)"/>
+<p>This is the amount of clicks on this cat: {{cat.counter}}
 </p>
+</div>

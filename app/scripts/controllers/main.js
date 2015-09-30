@@ -9,8 +9,11 @@
  */
 angular.module('styleSageApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.counter = 0;
-    $scope.inc = function () {
-      $scope.counter++;
+    $scope.cats = [
+      {name:"Frodo", img: "/images/gato.jpg", counter: 0},
+      {name:"Bilbo", img: "/images/gato2.jpg", counter: 0}
+    ];
+    $scope.inc = function (cat) {
+      cat.counter++;
     };
   });

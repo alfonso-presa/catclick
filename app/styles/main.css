@@ -59,6 +59,18 @@ body {
   margin-top: 28px;
 }
 
+.cat img {
+  width: 200px;
+}
+
+.cat {
+  max-width: 300px;
+  float: left;
+  border: 1px black solid;
+  margin: 10px;
+  padding: 10px;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {

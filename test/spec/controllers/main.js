@@ -16,9 +16,9 @@ describe('Controller: MainCtrl', function () {
     });
   }));
 
-  it('should increment counter when inc is called', function () {
-    expect(scope.counter).toBe(0);
-    scope.inc();
-    expect(scope.counter).toBe(1);
+  it('should increment the cat`s counter when inc is called', function () {
+    expect(scope.cats[0].counter).toBe(0);
+    scope.inc(scope.cats[0]);
+    expect(scope.cats[0].counter).toBe(1);
   });
 });
